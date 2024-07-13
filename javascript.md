@@ -125,6 +125,7 @@ JavaScript has several data types:
   const newObject = {...object};
   ```
 
+
 ### Template Literals
 - **Syntax**: Backticks `` ` `` allow for multi-line strings and embedded expressions.
   ```javascript
