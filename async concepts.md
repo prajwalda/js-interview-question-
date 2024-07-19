@@ -107,9 +107,9 @@ promise.catch(error => {
 });
 ```
 
-#### Promise.all(promises)
+#### Promise.all(promises) [fail fast]
 
-Resolves when all promises in the array resolve, or rejects if any promise rejects.
+Resolves when all promises in the array resolve, or rejects if any promise rejects.It will not wait for other promises it will `fail quickly` and return.
 
 ```javascript
 Promise.all([promise1, promise2, promise3])
@@ -123,7 +123,7 @@ Promise.all([promise1, promise2, promise3])
 
 #### Promise.allSettled(promises)
 
-Resolves when all promises in the array have settled (resolved or rejected), providing an array of results.
+Resolves when all promises in the array have settled (resolved or rejected), providing an array of results.It will wait for first seeking result and return it . if all of them fails then it will return an aggregate error of arrays.
 
 ```javascript
 Promise.allSettled([promise1, promise2, promise3])
@@ -149,7 +149,7 @@ Promise.any([promise1, promise2, promise3])
 
 #### Promise.race(promises)
 
-Resolves or rejects as soon as the first promise in the array resolves or rejects.
+Resolves or rejects when the first promise in the array resolves or rejects.if it will be error it will return error and if it will be Settled it will return settled.
 
 ```javascript
 Promise.race([promise1, promise2, promise3])
